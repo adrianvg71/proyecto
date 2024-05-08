@@ -1,0 +1,126 @@
+@import url(main.css);
+
+body {
+    overflow: hidden;
+    height: 100vh;
+    background-color: var(--fondo);
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.select-languaje {
+    align-items: center;
+    margin-top: -20vh;
+    display: flex;
+    flex-flow: column;
+    gap: 20px;
+    color: var(--texto);
+    font-size: 1.7rem;
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    color: var(--texto);
+    font-size: 4rem;
+    font-weight: bold;
+    margin-top: 20vh;
+    text-align: center;
+}
+  
+span {
+color: #1CB0F6;
+}
+  
+select {
+    padding: 7px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    font-size: 23px;
+    color: var(--texto);
+    width: 200px;
+  }
+  
+
+select option {
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+select:hover {
+    border-color: #999;
+  }
+
+  select:focus {
+    border-color: #2eaadd;
+    box-shadow: 0 0 5px rgba(46, 173, 221, 0.5);
+}
+
+
+/* CSS */
+.button-19 {
+  appearance: button;
+  background-color: #1899D6;
+  border: solid transparent;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: .8px;
+  line-height: 20px;
+  margin: 0;
+  outline: none;
+  overflow: visible;
+  padding: 13px 16px;
+  text-align: center;
+  text-transform: uppercase;
+  touch-action: manipulation;
+  transform: translateZ(0);
+  transition: filter .2s;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  width: 50%;
+}
+
+.button-19:after {
+  background-clip: padding-box;
+  background-color: #1CB0F6;
+  border: solid transparent;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  bottom: -4px;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.button-19:main,
+.button-19:focus {
+  user-select: auto;
+}
+
+.button-19:hover:not(:disabled) {
+  filter: brightness(1.1);
+  -webkit-filter: brightness(1.1);
+}
+
+.button-19:disabled {
+  cursor: auto;
+}
+
+.button-19:active {
+  border-width: 4px 0 0;
+  background: none;
+}
