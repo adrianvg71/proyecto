@@ -13,7 +13,7 @@ footer {
 
 .footer-container h3 {
   font-size: 1.6rem;
-  text-align: center;
+  text-align: start;
   line-height: 2rem;
 }
 
@@ -22,15 +22,20 @@ footer {
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 95%;
 }
 
 .footer-info,
-.footer-contact,
+.footer-social,
+.footer-contact {
+  width: 300px;
+}
+
 .footer-social {
   display: flex;
   flex-flow: column wrap;
-  gap: 5px;
+  align-items: center;
 }
 
 .footer-social ul {
@@ -60,11 +65,7 @@ footer {
                 <h3>LinguoLearn</h3>
                 <p>Una plataforma educativa para aprender idiomas de forma interactiva.</p>
             </div>
-            <div class="footer-contact">
-                <h3>Contacto</h3>
-                <p>Correo electrónico: info@linguolearn.com</p>
-                <p>Teléfono: +1234567890</p>
-            </div>
+            
             <div class="footer-social">
                 <h3>Síguenos</h3>
                 <ul>
@@ -72,6 +73,12 @@ footer {
                     <li><a href="#"><img src="./img/ig.webp" alt=""></a></li>
                     <li><a href="#"><img src="./img/twitter.webp" alt=""></a></li>
                 </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h3>Contacto</h3>
+                <p>Correo electrónico: info@linguolearn.com</p>
+                <p>Teléfono: +1234567890</p>
             </div>
         </div>
     </footer>
