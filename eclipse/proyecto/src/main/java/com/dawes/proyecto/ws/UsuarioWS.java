@@ -27,84 +27,98 @@ public class UsuarioWS {
 
 	@Autowired
 	private ServicioUsuario su;
+
 	@PostMapping("/registro")
 	public ResponseEntity<?> createUser(@RequestBody UsuarioVO usuario) {
 		try {
 			UsuarioVO usu = su.save(usuario);
 			return new ResponseEntity<UsuarioVO>(usu, HttpStatus.OK);
-	    } catch (DataIntegrityViolationException ex) {
-	        // Si se produce una excepción de violación de integridad de datos (correo duplicado, por ejemplo)
-	        // Devolver un mensaje de error específico y un código de estado HTTP 409 Conflict
-	        Map<String, Object> response = new HashMap<>();
-	        response.put("message", "El correo electrónico ya está en uso.");
-	        return new ResponseEntity<Map<String, Object>>(response, HttpStatus.CONFLICT);
-	    } catch (Exception ex) {
-	        // Manejar cualquier otra excepción y devolver un error interno del servidor
-	        Map<String, Object> response = new HashMap<>();
-	        response.put("message", "Error interno del servidor: " + ex.getMessage());
-	        return new ResponseEntity<Map<String, Object>>(response, HttpStatus.INTERNAL_SERVER_ERROR);
-	    }
-		
+		} catch (DataIntegrityViolationException ex) {
+			// Si se produce una excepción de violación de integridad de datos (correo
+			// duplicado, por ejemplo)
+			// Devolver un mensaje de error específico y un código de estado HTTP 409
+			// Conflict
+			Map<String, Object> response = new HashMap<>();
+			response.put("message", "El correo electrónico ya está en uso.");
+			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.CONFLICT);
+		} catch (Exception ex) {
+			// Manejar cualquier otra excepción y devolver un error interno del servidor
+			Map<String, Object> response = new HashMap<>();
+			response.put("message", "Error interno del servidor: " + ex.getMessage());
+			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+
 	}
-	
+
 	@PutMapping("/modificar")
 	public ResponseEntity<?> modificarUsuario(@RequestBody UsuarioVO usuario) {
-		System.out.println(usuario + " #######################################");
 		try {
-			Optional<UsuarioVO> usu = su.findByCorreo(usuario.getCorreo());
-			System.out.println(usu.get());
+			Optional<UsuarioVO> usu = su.findById(usuario.getIdusuario());
 			UsuarioVO user;
-			if(usu.get() != null) {
-				usu.get().setNombre(usuario.getNombre());
-				usu.get().setNivel(usuario.getNivel());
-				usu.get().setTipo(usuario.getTipo());
-				usu.get().setIdioma(usuario.getIdioma());
+			if (usu.get() != null) {
+				if (usuario.getNombre() != null) {
+					usu.get().setNombre(usuario.getNombre());
+				}
+				if (usuario.getCorreo() != null) {
+					usu.get().setCorreo(usuario.getCorreo());
+				}
+				if (usuario.getContraseña() != null) {
+					usu.get().setContraseña(usuario.getContraseña());
+				}
+				if (usuario.getNivel() != null) {
+					usu.get().setNivel(usuario.getNivel());
+				}
+				if (usuario.getTipo() != null) {
+					usu.get().setTipo(usuario.getTipo());
+				}
+				if (usuario.getIdioma() != null) {
+					usu.get().setIdioma(usuario.getIdioma());
+				}
 				user = su.save(usu.get());
 				return new ResponseEntity<UsuarioVO>(user, HttpStatus.OK);
-			}
-			else {
+			} else {
 				Map<String, Object> response = new HashMap<>();
-				response.put("message", "No se ha podido encontrado el usuario");
+				response.put("message", "No se ha podido encontrado el usuario ");
 				return new ResponseEntity<Map<String, Object>>(response, HttpStatus.INTERNAL_SERVER_ERROR);
 			}
-		} catch(Exception e) {
+		} catch (Exception e) {
 			Map<String, Object> response = new HashMap<>();
 			response.put("message", "No se ha podido modificar el usuario " + e.getMessage());
 			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
-	
+
 	@GetMapping("/buscar")
 	public ResponseEntity<?> searchAll() {
-		try {			
+		try {
 			List<UsuarioVO> usuarios = su.findAll();
 			return new ResponseEntity<List<UsuarioVO>>(usuarios, HttpStatus.OK);
-		} catch(Exception ex) {
+		} catch (Exception ex) {
 			Map<String, Object> response = new HashMap<>();
 			response.put("message", "No se ha encontrado los ususarios " + ex.getCause());
 			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
-	
+
 	@GetMapping("/buscar/{correo}")
 	public ResponseEntity<?> searchUser(@PathVariable String correo) {
-		try {			
+		try {
 			UsuarioVO usu = su.findByCorreo(correo).get();
 			return new ResponseEntity<UsuarioVO>(usu, HttpStatus.OK);
-		} catch(Exception e) {
+		} catch (Exception e) {
 			Map<String, Object> response = new HashMap<>();
 			response.put("message", "No se ha encontrado ese usuario " + e.getCause());
-			return new ResponseEntity<Map<String,Object>>(response,HttpStatus.INTERNAL_SERVER_ERROR);
+			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
-	
+
 	@DeleteMapping("/borrar/{correo}")
 	public ResponseEntity<?> deleteUser(@PathVariable String correo) {
-		Map<String,Object> response = new HashMap<>();
-		try {			
+		Map<String, Object> response = new HashMap<>();
+		try {
 			su.delete(su.findByCorreo(correo).get());
 			response.put("message", "Se ha eliminado el usuario");
-			return new ResponseEntity<Map<String,Object>>(response, HttpStatus.OK);
+			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.OK);
 		} catch (Exception e) {
 			response.put("message", "No se ha podido eliminar el usuario " + e.getCause());
 			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.INTERNAL_SERVER_ERROR);

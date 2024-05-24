@@ -12,7 +12,9 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.repository.query.FluentQuery.FetchableFluentQuery;
 import org.springframework.stereotype.Service;
 
+import com.dawes.proyecto.modelo.EjercicioVO;
 import com.dawes.proyecto.modelo.UsuarioEjercicioVO;
+import com.dawes.proyecto.modelo.UsuarioVO;
 import com.dawes.proyecto.repositorio.UsuarioEjercicioRepository;
 
 @Service
@@ -175,6 +177,16 @@ public class ServicioUsuarioEjercicioImpl implements ServicioUsuarioEjercicio {
 	@Override
 	public void deleteAll() {
 		uer.deleteAll();
+	}
+
+	@Override
+	public Optional<UsuarioEjercicioVO> findByUsuarioAndEjercicio(UsuarioVO user, EjercicioVO ejer) {
+		return uer.findByUsuarioAndEjercicio(user, ejer);
+	}
+
+	@Override
+	public Optional<List<UsuarioEjercicioVO>> findByUsuario(UsuarioVO user) {
+		return uer.findByUsuario(user);
 	}
 
 }

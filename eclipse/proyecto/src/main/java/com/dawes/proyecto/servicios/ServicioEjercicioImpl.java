@@ -176,4 +176,9 @@ public class ServicioEjercicioImpl implements ServicioEjercicio {
 		er.deleteAll();
 	}
 
+	@Override
+	public Optional<List<EjercicioVO>> findByNivel(String nivel) {
+		return er.findByNivel(nivel);
+	}
+
 }

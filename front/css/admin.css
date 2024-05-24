@@ -1,0 +1,30 @@
+@import url(./main.css);
+
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--azul-fondo);
+  height: 100vh;
+  margin: 0; /* Asegúrate de eliminar el margen por defecto */
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 4vw;
+  align-items: center;
+}
+
+main > div {
+  border: 6px solid #00aeffa9;
+  background-color: #FFFFFF;
+  padding: 20px;
+  width: 40%;
+  height: 50%;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

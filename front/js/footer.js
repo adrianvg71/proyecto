@@ -7,7 +7,7 @@ footer {
   align-items: flex-start;
   background-color: #222;
   color: white;
-  height: 11vh;
+  height: fit-content;
   width: 100vw;
 }
 
@@ -19,7 +19,7 @@ footer {
 
 .footer-container {
   margin-top: 2px;
-  margin: 0 auto;
+  margin: 10px auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -56,6 +56,18 @@ footer {
 
 .footer-social ul li {
   display: inline-block;
+}
+
+@media(max-width: 800px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px
+  }
+
+  .footer-container h3 {
+    text-align: center
+  }
 }
 </style>
 

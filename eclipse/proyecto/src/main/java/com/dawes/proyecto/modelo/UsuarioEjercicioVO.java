@@ -2,6 +2,8 @@ package com.dawes.proyecto.modelo;
 
 import java.time.LocalDateTime;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
@@ -13,10 +15,8 @@ import jakarta.persistence.Table;
 import jakarta.persistence.UniqueConstraint;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 import lombok.NonNull;
 
-@NoArgsConstructor
 @AllArgsConstructor
 @Data
 @Entity
@@ -28,11 +28,13 @@ public class UsuarioEjercicioVO {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idusuarioejercicio;
-	@ManyToOne(fetch = FetchType.LAZY)
+	@JsonIgnoreProperties("usuarioEjercicios")
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "idusuario")
 	@NonNull
 	private UsuarioVO usuario;
-	@ManyToOne(fetch = FetchType.LAZY)
+	@JsonIgnoreProperties("usuarioEjercicios")
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "idejercicio")
 	@NonNull
 	private EjercicioVO ejercicio;
@@ -41,12 +43,21 @@ public class UsuarioEjercicioVO {
 
 	private LocalDateTime fecharealizacion;
 
+	public UsuarioEjercicioVO() {
+		this.fecharealizacion = LocalDateTime.now();
+	}
+
 	public UsuarioEjercicioVO(@NonNull UsuarioVO usuario, @NonNull EjercicioVO ejercicio, @NonNull Integer aciertos) {
 		super();
 		this.usuario = usuario;
 		this.ejercicio = ejercicio;
 		this.aciertos = aciertos;
 		this.fecharealizacion = LocalDateTime.now();
+	}
+
+	@Override
+	public String toString() {
+		return "usuarioejercicio";
 	}
 
 }

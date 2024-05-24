@@ -12,6 +12,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.repository.query.FluentQuery.FetchableFluentQuery;
 import org.springframework.stereotype.Service;
 
+import com.dawes.proyecto.modelo.EjercicioVO;
 import com.dawes.proyecto.modelo.PreguntaVO;
 import com.dawes.proyecto.repositorio.PreguntaRepository;
 
@@ -174,6 +175,11 @@ public class ServicioPreguntaImpl implements ServicioPregunta {
 	@Override
 	public void deleteAll() {
 		pr.deleteAll();
+	}
+
+	@Override
+	public Optional<List<PreguntaVO>> findByEjercicio(EjercicioVO ejercicio) {
+		return pr.findByEjercicio(ejercicio);
 	}
 
 }

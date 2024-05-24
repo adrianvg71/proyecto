@@ -1,4 +1,5 @@
-import { claveSecreta, encriptarTexto } from "./encriptar.js";
+import { claveSecreta, encriptarTexto, desencriptarTexto } from "./encriptar.js";
+import { baseUrl } from "./constants.js";
 
 window.onload = function() {
   // Cambiar entre inicio de sesion/registro
@@ -28,12 +29,12 @@ window.onload = function() {
     event.preventDefault();
     
     const email = loginForm.querySelector('input[type="email"]').value;
-    const password = loginForm.querySelector('input[type="password"]').value;
+    let password = loginForm.querySelector('input[type="password"]').value;
     
     let usuarios = await cargarUsuarios();
     
     for(let usuario of usuarios) {
-      if(usuario.correo === email && usuario.contraseña === password) {
+      if(usuario.correo === email && desencriptarTexto(JSON.parse(usuario.contraseña), claveSecreta) === password) {
         var guardar = JSON.stringify( usuario )
         localStorage.setItem('usuario', JSON.stringify(encriptarTexto(guardar, claveSecreta)));
         window.location.href = 'index.html'
@@ -49,7 +50,7 @@ window.onload = function() {
 
   async function cargarUsuarios() {
     try {
-        const response = await fetch("http://localhost:8080/usuario/buscar", {
+        const response = await fetch(`${baseUrl}/usuario/buscar`, {
             method: 'GET',
             headers: new Headers({'Content-type': 'application/json'}),
             mode: 'cors'  
@@ -67,7 +68,9 @@ window.onload = function() {
 
     const email = registerForm.querySelector('input[type="email"]').value;
     const nombre = registerForm.querySelector('input[type="text"]').value;
-    const password = registerForm.querySelector('input[type="password"]').value;
+    let password = registerForm.querySelector('input[type="password"]').value;
+    password = JSON.stringify(encriptarTexto(password, claveSecreta));
+
 
     var usuario = {
       correo: email,
@@ -75,7 +78,7 @@ window.onload = function() {
       contraseña: password,
     }
 
-    fetch('http://localhost:8080/usuario/registro', {
+    fetch(`${baseUrl}/usuario/registro`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

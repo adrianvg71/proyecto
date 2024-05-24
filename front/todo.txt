@@ -1,0 +1,25 @@
+- Fin de la prueba de nivel:
+  - Diseñar vista de derrota✅
+  - Diseñar vista de Fin (comprobar si es examen)✅
+
+- Main page ✅
+
+- Insertar varios ejercicios para cada nivel con sus preguntas y sus opciones
+
+- Hacer que los tests funcionen segun el nivel y que se muestre el ejercicio que toque en cada momento✅
+
+- Cuando se complete un ejercicio se debe informar en la tabla usuarioejercicio que es la tabla que se usara para ver cual es el proximo ejercicio a realizar✅
+
+- Navbar de usuario registrado con icono de perfil dropdown para ir a la pagina de perfil y para cerrar sesion ✅
+
+- Pagina de perfil donde editar informacion del usuario y ver estadisticas (progreso de nivel, aciertos por ejercicio del nivel, etc) ✅
+
+- Navbar de administrador (añadir opcion de ir al panel de administrador en el dropdown del perfil)
+
+- Panel de administrador
+
+- Responsive
+
+- Documentacion
+
+- Despliegue (probar a meterlo todo en eclipse)

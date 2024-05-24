@@ -4,6 +4,8 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -35,6 +37,7 @@ public class UsuarioVO {
 	private String idioma;
 
 	@OneToMany(mappedBy = "usuario")
+	@JsonBackReference
 	private List<UsuarioEjercicioVO> ejercicios;
 
 	public UsuarioVO(String correo, String nombre, String contraseña) {
@@ -50,6 +53,11 @@ public class UsuarioVO {
 		this.fechacreacion = LocalDate.now();
 		this.ejercicios = new ArrayList<>();
 		this.tipo = "user";
+	}
+
+	@Override
+	public String toString() {
+		return "usuario";
 	}
 
 }

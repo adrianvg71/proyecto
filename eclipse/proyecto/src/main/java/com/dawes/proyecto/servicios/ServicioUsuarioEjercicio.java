@@ -10,7 +10,9 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.repository.query.FluentQuery.FetchableFluentQuery;
 
+import com.dawes.proyecto.modelo.EjercicioVO;
 import com.dawes.proyecto.modelo.UsuarioEjercicioVO;
+import com.dawes.proyecto.modelo.UsuarioVO;
 
 public interface ServicioUsuarioEjercicio {
 
@@ -73,6 +75,10 @@ public interface ServicioUsuarioEjercicio {
 	<S extends UsuarioEjercicioVO> List<S> findAll(Example<S> example);
 
 	<S extends UsuarioEjercicioVO> List<S> findAll(Example<S> example, Sort sort);
+
+	Optional<UsuarioEjercicioVO> findByUsuarioAndEjercicio(UsuarioVO user, EjercicioVO ejer);
+
+	Optional<List<UsuarioEjercicioVO>> findByUsuario(UsuarioVO user);
 
 	void deleteAll();
 

@@ -76,4 +76,6 @@ public interface ServicioEjercicio {
 
 	void deleteAll();
 
+	Optional<List<EjercicioVO>> findByNivel(String nivel);
+
 }
