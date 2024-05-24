@@ -16,34 +16,30 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `usuarioejercicio`
+-- Table structure for table `ejercicios`
 --
 
-DROP TABLE IF EXISTS `usuarioejercicio`;
+DROP TABLE IF EXISTS `ejercicios`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `usuarioejercicio` (
-  `aciertos` int DEFAULT NULL,
-  `idejercicio` int DEFAULT NULL,
-  `idusuario` int DEFAULT NULL,
-  `idusuarioejercicio` int NOT NULL AUTO_INCREMENT,
-  `fecharealizacion` datetime(6) DEFAULT NULL,
-  PRIMARY KEY (`idusuarioejercicio`),
-  UNIQUE KEY `UKiknqxnnbm3tmkggstyla74yt5` (`idusuario`,`idejercicio`),
-  KEY `FKbpm3tkyccdbtfmerno340uigb` (`idejercicio`),
-  CONSTRAINT `FK7a79jq4kq2o3mdt3t2rv9my3p` FOREIGN KEY (`idusuario`) REFERENCES `usuarios` (`idusuario`) ON DELETE CASCADE,
-  CONSTRAINT `FKbpm3tkyccdbtfmerno340uigb` FOREIGN KEY (`idejercicio`) REFERENCES `ejercicios` (`idejercicio`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `ejercicios` (
+  `idejercicio` int NOT NULL AUTO_INCREMENT,
+  `idioma` varchar(255) DEFAULT NULL,
+  `nivel` varchar(255) DEFAULT NULL,
+  `nombre` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`idejercicio`),
+  UNIQUE KEY `UK2otk3g9ci102b1vd135nhycqu` (`nombre`,`idioma`,`nivel`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `usuarioejercicio`
+-- Dumping data for table `ejercicios`
 --
 
-LOCK TABLES `usuarioejercicio` WRITE;
-/*!40000 ALTER TABLE `usuarioejercicio` DISABLE KEYS */;
-INSERT INTO `usuarioejercicio` VALUES (3,2,18,21,'2024-05-19 16:35:56.107652'),(3,2,19,22,'2024-05-19 17:08:41.069267'),(6,3,19,23,'2024-05-19 17:10:24.511320'),(10,4,19,24,'2024-05-19 17:11:28.542720'),(6,5,19,25,'2024-05-19 17:12:08.374812'),(4,2,20,26,'2024-05-19 19:53:00.654639');
-/*!40000 ALTER TABLE `usuarioejercicio` ENABLE KEYS */;
+LOCK TABLES `ejercicios` WRITE;
+/*!40000 ALTER TABLE `ejercicios` DISABLE KEYS */;
+INSERT INTO `ejercicios` VALUES (1,'Ingles','0','Prueba inicial'),(2,'Ingles','A1','Ejercicio 1 - A1'),(3,'Ingles','A1','Ejercicio 2 - A1'),(4,'Ingles','A1','Examen A1'),(5,'Ingles','A2','Ejercicio 1 - A2');
+/*!40000 ALTER TABLE `ejercicios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
