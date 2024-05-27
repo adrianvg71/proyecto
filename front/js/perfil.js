@@ -4,22 +4,15 @@ import { navbar } from './navbar.js';
 import { footer } from './footer.js';
 
 window.onload = function() {
+  /* NAVBAR */
+  document.body.insertAdjacentHTML('afterbegin', navbar);
+  const scriptContent = document.querySelector('nav script').textContent;
+  const scriptElement = document.createElement('script');
+  scriptElement.type = "module";
+  scriptElement.textContent = scriptContent;
+  document.body.appendChild(scriptElement);
+  /*---------------*/
   var usuario = JSON.parse(desencriptarTexto(JSON.parse(localStorage.getItem('usuario')), claveSecreta));
-  let perfil = document.querySelector(".perfil")
-  let dropdown = document.querySelector(".dropdown")
-  /* Mostrar dropdown */
-  perfil.addEventListener("click", function(event) {
-    dropdown.classList.toggle('shown');
-    document.querySelector(".fa-caret-down").classList.toggle('rotate')
-    event.stopPropagation();
-  })
-
-  document.addEventListener("click", function(event) {
-    if (!dropdown.contains(event.target) && !perfil.contains(event.target)) {
-      dropdown.classList.remove('shown');
-      document.querySelector(".fa-caret-down").classList.remove('rotate');
-    }
-  });
 
   async function buscarUsuarioEjercicio() {
     try {
