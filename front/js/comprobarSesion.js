@@ -18,7 +18,7 @@ async function comprobarSesion() {
  let dataUsuario = await cargarSesion();
  console.log(dataUsuario)
  if(dataUsuario) {
-   if(dataUsuario.tipo !== 'ADMIN' && window.location.pathname.substring(1) === "admin.html") {
+   if(dataUsuario.tipo !== 'ADMIN' && window.location.pathname.includes('admin')) {
      window.location.href = "index.html"
    }
   if(!dataUsuario.idioma) {

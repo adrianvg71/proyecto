@@ -150,7 +150,7 @@ nav > div {
     </div>
 </div>
 <script type="module">
-  import { claveSecreta, desencriptarTexto } from "./js/encriptar.js";
+  import { claveSecreta, desencriptarTexto } from "../js/encriptar.js";
   var usuario = JSON.parse(desencriptarTexto(JSON.parse(localStorage.getItem('usuario')), claveSecreta));
   if(usuario.tipo === 'ADMIN') {
     document.querySelector(".dropdown-content").innerHTML += '<a class="admin" href="admin.html">ADMIN</a>'

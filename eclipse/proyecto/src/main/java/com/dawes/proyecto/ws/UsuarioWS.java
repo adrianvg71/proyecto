@@ -112,11 +112,11 @@ public class UsuarioWS {
 		}
 	}
 
-	@DeleteMapping("/borrar/{correo}")
-	public ResponseEntity<?> deleteUser(@PathVariable String correo) {
+	@DeleteMapping("/borrar/{id}")
+	public ResponseEntity<?> deleteUser(@PathVariable Integer id) {
 		Map<String, Object> response = new HashMap<>();
 		try {
-			su.delete(su.findByCorreo(correo).get());
+			su.delete(su.findById(id).get());
 			response.put("message", "Se ha eliminado el usuario");
 			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.OK);
 		} catch (Exception e) {

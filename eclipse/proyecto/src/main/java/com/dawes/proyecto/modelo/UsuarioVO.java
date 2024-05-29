@@ -48,6 +48,27 @@ public class UsuarioVO {
 		this.fechacreacion = LocalDate.now();
 		this.ejercicios = new ArrayList<>();
 	}
+	
+	public UsuarioVO(String correo, String nombre, String contraseña, String tipo) {
+		super();
+		this.correo = correo;
+		this.nombre = nombre;
+		this.contraseña = contraseña;
+		this.fechacreacion = LocalDate.now();
+		this.tipo = tipo;
+		this.ejercicios = new ArrayList<>();
+	}
+	
+	public UsuarioVO(String correo, String nombre, String contraseña, String tipo, String idioma) {
+		super();
+		this.correo = correo;
+		this.nombre = nombre;
+		this.contraseña = contraseña;
+		this.fechacreacion = LocalDate.now();
+		this.tipo = tipo;
+		this.idioma = idioma;
+		this.ejercicios = new ArrayList<>();
+	}
 
 	public UsuarioVO() {
 		this.fechacreacion = LocalDate.now();
