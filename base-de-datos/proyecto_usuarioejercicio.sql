@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 8.0.34, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.36, for macos14 (x86_64)
 --
--- Host: 127.0.0.1    Database: proyecto
+-- Host: localhost    Database: proyecto
 -- ------------------------------------------------------
--- Server version	8.1.0
+-- Server version	8.4.0
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -33,7 +33,7 @@ CREATE TABLE `usuarioejercicio` (
   KEY `FKbpm3tkyccdbtfmerno340uigb` (`idejercicio`),
   CONSTRAINT `FK7a79jq4kq2o3mdt3t2rv9my3p` FOREIGN KEY (`idusuario`) REFERENCES `usuarios` (`idusuario`) ON DELETE CASCADE,
   CONSTRAINT `FKbpm3tkyccdbtfmerno340uigb` FOREIGN KEY (`idejercicio`) REFERENCES `ejercicios` (`idejercicio`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -42,7 +42,7 @@ CREATE TABLE `usuarioejercicio` (
 
 LOCK TABLES `usuarioejercicio` WRITE;
 /*!40000 ALTER TABLE `usuarioejercicio` DISABLE KEYS */;
-INSERT INTO `usuarioejercicio` VALUES (3,2,18,21,'2024-05-19 16:35:56.107652'),(3,2,19,22,'2024-05-19 17:08:41.069267'),(6,3,19,23,'2024-05-19 17:10:24.511320'),(10,4,19,24,'2024-05-19 17:11:28.542720'),(6,5,19,25,'2024-05-19 17:12:08.374812'),(4,2,20,26,'2024-05-19 19:53:00.654639');
+INSERT INTO `usuarioejercicio` VALUES (3,2,18,21,'2024-05-19 16:35:56.107652'),(3,2,19,22,'2024-05-19 17:08:41.069267'),(6,3,19,23,'2024-05-19 17:10:24.511320'),(10,4,19,24,'2024-05-19 17:11:28.542720'),(6,5,19,25,'2024-05-19 17:12:08.374812'),(4,2,20,26,'2024-05-19 19:53:00.654639'),(5,2,21,27,'2024-05-24 23:15:51.274705');
 /*!40000 ALTER TABLE `usuarioejercicio` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -55,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-05-24 22:15:51
+-- Dump completed on 2024-05-30 17:48:09
