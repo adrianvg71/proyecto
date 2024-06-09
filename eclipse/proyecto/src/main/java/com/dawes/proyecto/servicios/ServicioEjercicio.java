@@ -12,14 +12,6 @@ import org.springframework.data.repository.query.FluentQuery.FetchableFluentQuer
 
 import com.dawes.proyecto.modelo.EjercicioVO;
 
-/**
- * Interfaz para el servicio relacionado con la entidad {@link EjercicioVO}.
- * 
- * <p>
- * Define métodos para realizar operaciones CRUD y consultas personalizadas en
- * la entidad EjercicioVO.
- * </p>
- */
 public interface ServicioEjercicio {
 
 	<S extends EjercicioVO> S save(S entity);

@@ -19,17 +19,17 @@ async function comprobarSesion() {
  console.log(dataUsuario)
  if(dataUsuario) {
    if(dataUsuario.tipo !== 'ADMIN' && window.location.pathname.includes('admin')) {
-     window.location.href = "/forbidden.html"
+     window.location.href = "index.html"
    }
   if(!dataUsuario.idioma) {
     if(window.location.pathname.substring(1) != "idioma.html") {
-      window.location.href = "/idioma.html"
+      window.location.href = "idioma.html"
     }
     return;
   }
   else if(!dataUsuario.nivel) {
     if(window.location.pathname.substring(1) != "select-prueba.html") {
-      window.location.href = "/select-prueba.html"
+      window.location.href = "select-prueba.html"
     }
     return;
   }

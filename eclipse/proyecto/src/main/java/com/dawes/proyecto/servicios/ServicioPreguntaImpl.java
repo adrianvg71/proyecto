@@ -16,10 +16,6 @@ import com.dawes.proyecto.modelo.EjercicioVO;
 import com.dawes.proyecto.modelo.PreguntaVO;
 import com.dawes.proyecto.repositorio.PreguntaRepository;
 
-/**
- * Implementación del servicio de preguntas.
- */
-
 @Service
 public class ServicioPreguntaImpl implements ServicioPregunta {
 

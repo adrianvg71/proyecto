@@ -3,7 +3,7 @@
 body {
     overflow: hidden;
     height: 100vh;
-    /* background-color: var(--fondo); */
+    background-color: var(--fondo);
     display: flex;
     flex-flow: column wrap;
     justify-content: space-between;
@@ -11,10 +11,6 @@ body {
 }
 
 .select-languaje {
-    background-color: #33333365;
-    padding: 2rem;
-    border-radius: 20px;
-    color: #F0F0F0;
     align-items: center;
     margin-top: -20vh;
     display: flex;
@@ -25,13 +21,9 @@ body {
     text-align: center;
 }
 
-.select-languaje p {
-    font-weight: 500;
-    color: #FFFF;
-}
-
 h1 {
     text-align: center;
+    color: var(--texto);
     font-size: 4rem;
     font-weight: bold;
     margin-top: 20vh;

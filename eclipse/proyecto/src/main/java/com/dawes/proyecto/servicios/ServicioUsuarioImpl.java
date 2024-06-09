@@ -15,27 +15,15 @@ import org.springframework.stereotype.Service;
 import com.dawes.proyecto.modelo.UsuarioVO;
 import com.dawes.proyecto.repositorio.UsuarioRepository;
 
-/**
- * Implementación del servicio para gestionar usuarios.
- */
 @Service
 public class ServicioUsuarioImpl implements ServicioUsuario {
 
 	@Autowired
 	private UsuarioRepository ur;
 
-	/**
-	 * Busca un usuario por su correo electrónico.
-	 *
-	 * @param correo El correo electrónico del usuario a buscar.
-	 * @return Un Optional que contiene el usuario encontrado, si existe.
-	 */
-	@Override
 	public Optional<UsuarioVO> findByCorreo(String correo) {
 		return ur.findByCorreo(correo);
 	}
-
-	// Métodos CRUD básicos
 
 	@Override
 	public <S extends UsuarioVO> S save(S entity) {

@@ -22,9 +22,6 @@ import com.dawes.proyecto.servicios.ServicioEjercicio;
 import com.dawes.proyecto.servicios.ServicioUsuario;
 import com.dawes.proyecto.servicios.ServicioUsuarioEjercicio;
 
-/**
- * Controlador REST para la gestión de usuarios y ejercicios.
- */
 @RestController
 @RequestMapping("/usuarioejercicio")
 public class UsuarioEjercicioWS {
@@ -36,31 +33,19 @@ public class UsuarioEjercicioWS {
 	@Autowired
 	private ServicioEjercicio se;
 
-	/**
-	 * Inserta una nueva relación entre usuario y ejercicio.
-	 * 
-	 * @param usuej La relación entre usuario y ejercicio a insertar
-	 * @return Una respuesta HTTP que indica el resultado de la operación de
-	 *         inserción
-	 */
 	@PostMapping("/insertar")
 	private ResponseEntity<?> insertar(@RequestBody UsuarioEjercicioVO usuej) {
+		System.out.println(usuej);
 		try {
 			UsuarioEjercicioVO usuario = sue.save(usuej);
 			return new ResponseEntity<UsuarioEjercicioVO>(usuario, HttpStatus.OK);
 		} catch (Exception e) {
 			Map<String, Object> response = new HashMap<>();
-			response.put("message", "No se ha podido insertar el usuarioejercicio " + e.getCause());
+			response.put("message", "no se ha podido insertar el usuarioejercicio " + e.getCause());
 			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
 
-	/**
-	 * Busca todas las relaciones entre usuarios y ejercicios.
-	 * 
-	 * @return Una respuesta HTTP que contiene la lista de todas las relaciones
-	 *         entre usuarios y ejercicios
-	 */
 	@GetMapping("/buscar")
 	private ResponseEntity<?> buscarTodos() {
 		try {
@@ -68,20 +53,11 @@ public class UsuarioEjercicioWS {
 			return new ResponseEntity<List<UsuarioEjercicioVO>>(usuarios, HttpStatus.OK);
 		} catch (Exception e) {
 			Map<String, Object> response = new HashMap<>();
-			response.put("message", "No se ha podido buscar los usuarios ejercicios " + e.getCause());
+			response.put("message", "no se ha podido buscar los usuarios ejercicios " + e.getCause());
 			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
 
-	/**
-	 * Busca una relación entre usuario y ejercicio por los IDs de usuario y
-	 * ejercicio.
-	 * 
-	 * @param userId El ID del usuario
-	 * @param ejerId El ID del ejercicio
-	 * @return Una respuesta HTTP que contiene la relación entre usuario y ejercicio
-	 *         encontrada
-	 */
 	@GetMapping("/buscar/{userId}/{ejerId}")
 	private ResponseEntity<?> buscar(@PathVariable Integer userId, @PathVariable Integer ejerId) {
 		try {
@@ -91,18 +67,11 @@ public class UsuarioEjercicioWS {
 			return new ResponseEntity<UsuarioEjercicioVO>(usej, HttpStatus.OK);
 		} catch (Exception e) {
 			Map<String, Object> response = new HashMap<>();
-			response.put("message", "No se ha podido buscar los usuarios ejercicios " + e.getCause());
+			response.put("message", "no se ha podido buscar los usuarios ejercicios " + e.getCause());
 			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
 
-	/**
-	 * Busca todas las relaciones de usuario y ejercicio asociadas a un usuario.
-	 * 
-	 * @param userId El ID del usuario
-	 * @return Una respuesta HTTP que contiene la lista de relaciones de usuario y
-	 *         ejercicio encontradas
-	 */
 	@GetMapping("/buscar/{userId}")
 	private ResponseEntity<?> buscar(@PathVariable Integer userId) {
 		try {
@@ -111,20 +80,11 @@ public class UsuarioEjercicioWS {
 			return new ResponseEntity<List<UsuarioEjercicioVO>>(usej, HttpStatus.OK);
 		} catch (Exception e) {
 			Map<String, Object> response = new HashMap<>();
-			response.put("message", "No se ha podido buscar los usuarios ejercicios " + e.getCause());
+			response.put("message", "no se ha podido buscar los usuarios ejercicios " + e.getCause());
 			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
 
-	/**
-	 * Busca todas las relaciones de usuario y ejercicio asociadas a un usuario y un
-	 * nivel específico.
-	 * 
-	 * @param userId El ID del usuario
-	 * @param nivel  El nivel de los ejercicios a buscar
-	 * @return Una respuesta HTTP que contiene la lista de relaciones de usuario y
-	 *         ejercicio encontradas
-	 */
 	@GetMapping("/buscarpornivel/{userId}/{nivel}")
 	private ResponseEntity<?> buscar(@PathVariable Integer userId, @PathVariable String nivel) {
 		try {
@@ -140,7 +100,7 @@ public class UsuarioEjercicioWS {
 			return new ResponseEntity<List<UsuarioEjercicioVO>>(usejnivel, HttpStatus.OK);
 		} catch (Exception e) {
 			Map<String, Object> response = new HashMap<>();
-			response.put("message", "No se ha podido buscar los usuarios ejercicios " + e.getMessage());
+			response.put("message", "no se ha podido buscar los usuarios ejercicios " + e.getMessage());
 			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}

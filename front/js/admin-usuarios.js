@@ -1,9 +1,7 @@
-import { claveSecreta, encriptarTexto, desencriptarTexto } from "./encriptar.js";
 import { navbar } from "./navbar.js";
 import { baseUrl } from "./constants.js"
 
 window.onload = function() {
-	var usuario = JSON.parse(desencriptarTexto(JSON.parse(localStorage.getItem('usuario')), claveSecreta));
     /* NAVBAR */
     document.body.insertAdjacentHTML('afterbegin', navbar);
     const scriptContent = document.querySelector('nav script').textContent;
@@ -71,7 +69,7 @@ window.onload = function() {
         let inputs = document.querySelectorAll(".modal-editar input")
         inputs.forEach(input => {
             if(input.id != "contra") {
-                input.value = usuario[input.id]
+                input.placeholder = usuario[input.id]
             } 
         })
         let selects = document.querySelectorAll(".modal-editar select");
@@ -104,7 +102,7 @@ window.onload = function() {
             }
         });
         formObject.idusuario = document.querySelector(".modal-editar").id;
-        if(formObject.tipo) {
+        if(formObject.tipo === 'on') {
             formObject.tipo = 'ADMIN';
         } else {
             formObject.tipo = "user"
@@ -118,10 +116,6 @@ window.onload = function() {
                 mode: 'cors'  
             });
             const usuarioNuevo = await response.json()
-            if(usuarioNuevo.idusuario == usuario.idusuario) {
-				var guardar = JSON.stringify( usuarioNuevo );
-        		localStorage.setItem('usuario', JSON.stringify(encriptarTexto(guardar, claveSecreta)));
-			}
             window.location.reload();
         } catch (error) {
             console.error('Error al cargar usuarios:', error);
@@ -134,7 +128,7 @@ window.onload = function() {
         document.querySelector(".modal-add").classList.add("shown")
     }
 
-    document.querySelector(".modal-add form").addEventListener("submit", addUser)
+    document.querySelector("#add").addEventListener("click", addUser)
 
     async function addUser() {
         event.preventDefault();
@@ -187,19 +181,4 @@ window.onload = function() {
             console.error('Error al cargar usuarios:', error);
         }
     }
-
-    document.addEventListener("mousedown", function(event) {
-        let modalEditar = document.querySelector(".modal-editar");
-        let modalAdd = document.querySelector(".modal-add");
-        let modalDelete = document.querySelector(".modal-delete");
-        if ((modalEditar.contains(event.target) && !modalEditar.querySelector(".modal-info").contains(event.target)) || (modalAdd.contains(event.target) && !modalAdd.querySelector(".modal-info").contains(event.target)) || (modalDelete.contains(event.target) && !modalDelete.querySelector(".modal-info").contains(event.target))) {
-          modalEditar.classList.remove('shown');
-          modalAdd.classList.remove('shown');
-          modalDelete.classList.remove('shown');
-        }
-      });
-
-      let liSize = document.querySelector("main li").clientWidth;
-      document.querySelector("main h2").style.transform = `translateX(-${liSize/2}px)`
-    
 }

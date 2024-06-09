@@ -24,21 +24,21 @@ async function obtenerEjercicio() {
 /* Funcion principal donde ya tenemos el ejercicio */
 let pregunta_actual = 0;
 if(localStorage.getItem('pregunta_actual')) {
-  pregunta_actual = parseInt(desencriptarTexto(JSON.parse(localStorage.getItem('pregunta_actual')), claveSecreta))
+  pregunta_actual = parseInt(localStorage.getItem('pregunta_actual'))
 } else {
-  localStorage.setItem('pregunta_actual', JSON.stringify(encriptarTexto(pregunta_actual, claveSecreta)))
+  localStorage.setItem('pregunta_actual', pregunta_actual)
 }
 let aciertos = 0;
 if(localStorage.getItem('aciertos')) {
-  aciertos = parseInt(desencriptarTexto(JSON.parse(localStorage.getItem('aciertos')), claveSecreta))
+  aciertos = parseInt(localStorage.getItem('aciertos'))
 } else {
-  localStorage.setItem('aciertos', JSON.stringify(encriptarTexto(aciertos, claveSecreta)))
+  localStorage.setItem('aciertos', aciertos)
 }
 let fallos = 0;
 if(localStorage.getItem('fallos')) {
-  fallos = parseInt(desencriptarTexto(JSON.parse(localStorage.getItem('fallos')), claveSecreta))
+  fallos = parseInt(localStorage.getItem('fallos'))
 } else {
-  localStorage.setItem('fallos', JSON.stringify(encriptarTexto(fallos, claveSecreta)))
+  localStorage.setItem('fallos', fallos)
 }
 async function main() {
   var ejercicio = await obtenerEjercicio();
@@ -165,9 +165,9 @@ async function main() {
 
   function continuar() {
     pregunta_actual++
-    localStorage.setItem('pregunta_actual', JSON.stringify(encriptarTexto(pregunta_actual, claveSecreta)))
-    localStorage.setItem('aciertos', JSON.stringify(encriptarTexto(aciertos, claveSecreta)))
-    localStorage.setItem('fallos', JSON.stringify(encriptarTexto(fallos, claveSecreta)))
+    localStorage.setItem('pregunta_actual', pregunta_actual)
+    localStorage.setItem('aciertos', aciertos)
+    localStorage.setItem('fallos', fallos)
     boton.removeEventListener("click", continuar)
     
     if(fallos == 4 && ejercicio.nombre != "Prueba inicial") {
@@ -180,7 +180,7 @@ async function main() {
   }
 
   async function fin() {
-    document.body.style.overflowY = "hidden";
+    
     if (ejercicio.nombre == "Prueba inicial") {
       finPruebaInicial()
     } else if(ejercicio.nombre.split(" ")[0] == "Examen") {
@@ -204,6 +204,7 @@ async function main() {
       mode: 'cors',
       body: JSON.stringify( usuarioEjercicio ),
     })
+    
     localStorage.removeItem('aciertos');
     localStorage.removeItem('pregunta_actual');
     localStorage.removeItem('fallos');
@@ -214,30 +215,24 @@ async function main() {
   function finPruebaInicial() {
     document.body.innerHTML = ""
     /* Calcular nivel */
-    console.log(aciertos)
     switch(aciertos) {
-        case 1:
-        case 2:
-          nivel = 'A2';
-          break;
-        case 3:
-        case 4:
-          nivel = 'B1';
-          break;
-        case 5:
-        case 6:
-          nivel = 'B2';
-          break;
-        case 7:
-        case 8:
-          nivel = 'C1';
-          break;
-        case 9:
-        case 10:
-          nivel = 'C2';
-          break;
-        default:
-          nivel = 'A1';
+      case 1 || 2:
+      nivel = 'A2';
+      break;
+      case 3 || 4:
+        nivel = 'B1';
+        break;
+      case 5 || 6:
+        nivel = 'B2';
+        break;
+      case 7 || 8:
+        nivel = 'C1';
+        break;
+      case 9 || 10:
+        nivel = 'C2';
+        break;
+      default:
+        nivel = 'A1';
     }
     let divFin = document.createElement("div");
     divFin.classList.add("divFin");
@@ -339,7 +334,6 @@ async function main() {
     localStorage.removeItem('pregunta_actual');
     localStorage.removeItem('fallos');
     document.body.innerHTML = "";
-    document.body.style.overflowY = "hidden";
     let divFin = document.createElement("div");
     divFin.classList.add("divFin");
     let h2 = document.createElement("h2");
@@ -393,7 +387,7 @@ async function main() {
         nivel = 'C2';
         break;
       default:
-        nivel = 'MAX';
+        nivel = '0';
         break;
     }
   }
@@ -426,4 +420,3 @@ function pintarConfeti() {
 
 main();
 }
-
