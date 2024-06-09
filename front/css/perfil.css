@@ -296,26 +296,15 @@ form {
 
 
 @media(max-width: 800px) {
-
-  .perfil-container{
-    .perfil-info {
-      width: 90vw;
-    }
+  .vacio {
+    display: none;
   }
 
-  .aditional-container {
-    .aditional-info {
-      width: 90vw;
-    }
+  nav h1 {
+    font-size: 3rem;
   }
 
-  .chart-container {
-    .chart-info {
-      width: 90vw;
-    }
-  }
-
-  .modal-info {
-    transform: scale(1);
+  nav > div {
+    margin: 10px 20px;
   }
 }

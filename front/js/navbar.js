@@ -121,15 +121,7 @@ nav > div {
   }
 
   nav h1 {
-    font-size: 2.5rem;
-  }
-
-  .fa-circle-user {
-    font-size: 2rem;
-  }
-
-  .fa-caret-down {
-    font-size: 1rem;
+    font-size: 3rem;
   }
 
   nav > div {
@@ -142,7 +134,7 @@ nav > div {
 <nav>
 <div class="vacio"></div>
 <div class="titulo">
-    <h1 onclick="window.location.href='/index.html'">LinguoLearn</h1>
+    <h1 onclick="window.location.href='index.html'">LinguoLearn</h1>
 </div>
 <div class="perfil">
     <i class="fa-solid fa-circle-user"></i>
@@ -151,8 +143,8 @@ nav > div {
 <div class="dropdown z-10 absolute top-10 right-4 invisible opacity-0 transition-all ease-linear duration-400">
     <div class="w-80 h-80  bg-[#ffdec2] rounded-lg  ">
         <div class="dropdown-content" id="overflow-y-auto h-[17.2rem] flex flex-col p-4 gap-2 ">
-            <a href="/perfil.html">PERFIL</a>
-            <a href="/login.html" onclick="localStorage.clear()">CERRAR SESION</a>
+            <a href="perfil.html">PERFIL</a>
+            <a href="login.html" onclick="localStorage.clear()">CERRAR SESION</a>
             
         </div>
     </div>
@@ -161,7 +153,7 @@ nav > div {
   import { claveSecreta, desencriptarTexto } from "../js/encriptar.js";
   var usuario = JSON.parse(desencriptarTexto(JSON.parse(localStorage.getItem('usuario')), claveSecreta));
   if(usuario.tipo === 'ADMIN') {
-    document.querySelector(".dropdown-content").innerHTML += '<a class="admin" href="/admin.html">ADMIN</a>'
+    document.querySelector(".dropdown-content").innerHTML += '<a class="admin" href="admin.html">ADMIN</a>'
   }
   let perfil = document.querySelector(".perfil")
   let dropdown = document.querySelector(".dropdown")

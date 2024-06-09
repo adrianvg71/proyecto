@@ -14,9 +14,10 @@ body {
 
 .info {
   /* transform: scale(1.1); */
+  margin-bottom: 25px;
   display: flex;
   flex-flow: column wrap;
-  gap: 2.25rem;
+  gap: 2rem;
   padding: 4rem;
   border-radius: 25px;
   text-align: center;
@@ -25,11 +26,12 @@ body {
 
 .info h3 {
   color: #333;
-  font-size: 3.3rem;
+  font-size: 2.5rem;
   font-weight: 500;
 }
 
 .next {
+  margin-top: .8rem;
   display: flex;
   flex-flow: column wrap;
   gap: .7rem;
@@ -44,24 +46,4 @@ body {
 .info span {
   color: #1CB0F6;
   font-weight: bold;
-}
-
-@media(max-width: 400px) {
-
-  .dropdown {
-    top: 40px !important;
-  }
-  
-  .info {
-    /* transform: scale(0.8); */
-    padding: 20px;
-    
-    h3 {
-      font-size: 2.5rem;
-    }
-  }
-
-  .next p {
-    font-size: 1.25rem;
-  }
 }

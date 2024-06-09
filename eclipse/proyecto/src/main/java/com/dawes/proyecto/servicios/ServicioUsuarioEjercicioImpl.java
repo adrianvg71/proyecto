@@ -17,10 +17,6 @@ import com.dawes.proyecto.modelo.UsuarioEjercicioVO;
 import com.dawes.proyecto.modelo.UsuarioVO;
 import com.dawes.proyecto.repositorio.UsuarioEjercicioRepository;
 
-/**
- * Implementación de ServicioUsuarioEjercicio que proporciona métodos para
- * realizar operaciones CRUD relacionadas con UsuarioEjercicio.
- */
 @Service
 public class ServicioUsuarioEjercicioImpl implements ServicioUsuarioEjercicio {
 

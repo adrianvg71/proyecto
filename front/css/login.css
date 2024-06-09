@@ -121,13 +121,3 @@ body {
   font-weight: bold;
 }
 
-@media(max-width: 550px) {
-
-  img {
-    width: 90vw !important;
-  }
-
-  .formularios {
-    width: 90vw;
-  }
-}
