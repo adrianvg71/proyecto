@@ -14,10 +14,16 @@ body {
 
 .info {
   /* transform: scale(1.1); */
+<<<<<<< HEAD
   margin-bottom: 25px;
   display: flex;
   flex-flow: column wrap;
   gap: 2rem;
+=======
+  display: flex;
+  flex-flow: column wrap;
+  gap: 2.25rem;
+>>>>>>> master
   padding: 4rem;
   border-radius: 25px;
   text-align: center;
@@ -26,12 +32,19 @@ body {
 
 .info h3 {
   color: #333;
+<<<<<<< HEAD
   font-size: 2.5rem;
+=======
+  font-size: 3.3rem;
+>>>>>>> master
   font-weight: 500;
 }
 
 .next {
+<<<<<<< HEAD
   margin-top: .8rem;
+=======
+>>>>>>> master
   display: flex;
   flex-flow: column wrap;
   gap: .7rem;
@@ -47,3 +60,26 @@ body {
   color: #1CB0F6;
   font-weight: bold;
 }
+<<<<<<< HEAD
+=======
+
+@media(max-width: 400px) {
+
+  .dropdown {
+    top: 40px !important;
+  }
+  
+  .info {
+    /* transform: scale(0.8); */
+    padding: 20px;
+    
+    h3 {
+      font-size: 2.5rem;
+    }
+  }
+
+  .next p {
+    font-size: 1.25rem;
+  }
+}
+>>>>>>> master

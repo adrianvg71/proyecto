@@ -3,7 +3,11 @@
 body {
   /* overflow: hidden; */
   height: 100vh;
+<<<<<<< HEAD
   background-color: var(--fondo);
+=======
+  /* background-color: var(--fondo); */
+>>>>>>> master
   display: flex;
   flex-flow: column wrap;
   justify-content: space-between;
@@ -27,6 +31,7 @@ span {
   margin-top: -20vh;
   background-color: #33333365;
   padding: 2rem;
+<<<<<<< HEAD
   border-radius: 5px;
   color: #F0F0F0;
   font-weight:600;
@@ -34,6 +39,15 @@ span {
   flex-flow: column wrap;
   gap: 1rem;
   max-width: 30%;
+=======
+  border-radius: 20px;
+  color: #FFFF;
+  font-weight:600;
+  display: flex;
+  flex-flow: column wrap;
+  gap: 1.5rem;
+  width: 550px;
+>>>>>>> master
 }
 
 .content h3 {
@@ -50,7 +64,11 @@ span {
   gap: 5rem;
 }
 
+<<<<<<< HEAD
 .botones button {
+=======
+/* .botones button {
+>>>>>>> master
   padding: 15px;
   font-size: 1.2rem;
   border-radius: 20px;
@@ -64,4 +82,24 @@ span {
   background-color: #333;
   color: white;
   border: 2px solid #333;
+<<<<<<< HEAD
 }
+=======
+} */
+
+#prueba {
+  background-color: rgba(0, 128, 0, 0.4);
+}
+
+#prueba::after {
+  background-color: #32CD32;
+}
+
+/* Media query para pantallas más pequeñas
+@media (max-width: 1200px) {
+  .content {
+    width: fit-content; 
+    padding: 1rem; 
+  }
+} */
+>>>>>>> master

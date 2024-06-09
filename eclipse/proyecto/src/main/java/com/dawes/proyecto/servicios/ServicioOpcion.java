@@ -12,6 +12,17 @@ import org.springframework.data.repository.query.FluentQuery.FetchableFluentQuer
 
 import com.dawes.proyecto.modelo.OpcionVO;
 
+<<<<<<< HEAD
+=======
+/**
+ * Interfaz para el servicio relacionado con la entidad {@link OpcionVO}.
+ * 
+ * <p>
+ * Define métodos para realizar operaciones CRUD y consultas personalizadas en
+ * la entidad OpcionVO.
+ * </p>
+ */
+>>>>>>> master
 public interface ServicioOpcion {
 
 	<S extends OpcionVO> S save(S entity);
@@ -76,4 +87,8 @@ public interface ServicioOpcion {
 
 	void deleteAll();
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> master

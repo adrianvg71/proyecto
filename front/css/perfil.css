@@ -296,6 +296,7 @@ form {
 
 
 @media(max-width: 800px) {
+<<<<<<< HEAD
   .vacio {
     display: none;
   }
@@ -306,5 +307,28 @@ form {
 
   nav > div {
     margin: 10px 20px;
+=======
+
+  .perfil-container{
+    .perfil-info {
+      width: 90vw;
+    }
+  }
+
+  .aditional-container {
+    .aditional-info {
+      width: 90vw;
+    }
+  }
+
+  .chart-container {
+    .chart-info {
+      width: 90vw;
+    }
+  }
+
+  .modal-info {
+    transform: scale(1);
+>>>>>>> master
   }
 }

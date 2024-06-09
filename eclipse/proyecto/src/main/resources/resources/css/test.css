@@ -1,0 +1,328 @@
+@import url(./main.css);
+
+body {
+  height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: var(--azul-fondo);
+}
+
+h1 {
+  color: #2fc4ff85;
+  font-weight:bold;
+  font-size: 5rem;
+  text-align: center;
+  padding-top: 4rem;
+}
+
+.pregunta {
+  margin: 4rem auto 2rem;
+  min-height: 20vh;
+  width: 40vw;
+  /* max-height: fit-content; */
+  /* max-width: fit-content; */
+  border-radius: 25px;
+  border: 3px solid #2fc4ff85;
+  background-color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  position: relative; 
+}
+
+.pregunta .vidas {
+  display: flex;
+  padding: 20px;
+  flex-direction: row;
+  position: absolute;
+  top: 0;
+  right: calc(50% - 64px);
+  gap: 5px;
+  font-size: 1.5rem;
+  /* right: 50%; */
+  width: fit-content;
+}
+
+.pregunta p {
+  text-align: end;
+  margin: 20px;
+  position: absolute;
+  color: #333333ad;
+  font-weight: 200;
+  font-size: 0.95rem;
+  top: 0; 
+  right: 0; 
+}
+
+.pregunta h3 {
+  /* width: 60%; */
+  color: #333333b6;
+  font-weight: 500;
+  padding: 3rem;
+  font-weight: 600;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.opciones {
+  margin: 0 auto;
+  width: 40vw;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Dos columnas de tamaño igual */
+  grid-auto-rows: auto; /* Altura automática para las filas */
+  grid-column-gap: 20px; /* Espacio entre las columnas */
+  grid-row-gap: 10px; /* Espacio entre las filas */
+}
+
+.opciones > div {
+  padding: 20px;
+  background-color: #FFFFFF;
+  border-radius: 25px;
+  text-align: center;
+  border: 3px solid #2fc4ff85;
+  cursor: pointer;
+  color: #333;
+  font-weight: 300;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform .2s ease-in-out, background-color .2s ease-in-out, color .1s ease-in;
+}
+
+.opciones p {
+  font-family: "Poppins", sans-serif !important;
+}
+
+.opciones > div:hover {
+  transform: scale(1.1);
+}
+
+.opciones > div.selected {
+  background-color: #2fc4fffa !important;
+  color: white;
+  font-weight: 400;
+}
+
+.opcion.error {
+  background-color: #ff3333;
+  border-color: #ff3333;
+  color: white;
+}
+
+.opcion.correcto {
+  background-color: #32CD32;
+  border-color: #32CD32;
+  color: white;
+}
+
+/* button */
+.button-19 {
+  opacity: .4;
+  pointer-events:none;
+  appearance: button;
+  background-color: #1899D6;
+  /* background-color: #ff3333; */
+  border: solid transparent;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: .8px;
+  line-height: 20px;
+  margin: 0;
+  outline: none;
+  overflow: visible;
+  padding: 13px 16px;
+  text-align: center;
+  text-transform: uppercase;
+  touch-action: manipulation;
+  transform: translateZ(0);
+  transition: filter .2s, background-color .2s cubic-bezier(1, 1, 0, 0), opacity .2s ease-in;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  width: 40vw;
+  display: block;
+  margin: 2rem auto;
+}
+
+.button-19::after {
+  background-clip: padding-box;
+  background-color: #1CB0F6;
+  /* background-color: #ff3333; */
+  border: solid transparent;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  bottom: -4px;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
+  transition: background-color .2s cubic-bezier(1, 1, 0, 0);
+}
+
+.button-19:main,
+.button-19:focus {
+  user-select: auto;
+}
+
+.button-19:hover:not(:disabled) {
+  filter: brightness(1.1);
+  -webkit-filter: brightness(1.1);
+}
+
+.button-19:disabled {
+  cursor: auto;
+} 
+
+
+.button-19.error {
+  background-color: #ff3333; /* Cambiamos el color de fondo del botón a rojo */
+  overflow: hidden;
+  position: relative;
+}
+
+.button-19.error::after {
+  content: "";
+  border-radius: 40%;
+  left: -50%;
+  right: -50%;
+  top: -150%;
+  bottom: -150%;
+  background-color: #1899D6;
+  line-height: 8.34em;
+  transform: scale(0, 0);
+  transition: transform .4s ease; /* Agregamos transición para el efecto de crecimiento */
+}
+
+.button-19.error:hover {
+  background-color: #ff3333e5;
+}
+
+.button-19.correcto {
+  background-color: #32CD32; /* Cambiamos el color de fondo del botón a rojo */
+  overflow: hidden;
+  position: relative;
+}
+
+.button-19.correcto::after {
+  content: "";
+  border-radius: 40%;
+  left: -50%;
+  right: -50%;
+  top: -150%;
+  bottom: -150%;
+  background-color: #1899D6;
+  line-height: 8.34em;
+  transform: scale(0, 0);
+  transition: transform .4s ease; /* Agregamos transición para el efecto de crecimiento */
+}
+
+/* FIN DE PRUEBA DE NIVEL */
+
+.divFin {
+  overflow: hidden;
+  transform: scale(1.15);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-flow: column wrap;
+  gap: 20px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.divFin h2 {
+  color: #1CB0F6;
+  font-size: 5rem;
+  font-weight: bold;
+  /* margin-bottom: 50px; */
+}
+
+.divFin p {
+  /* margin-top: 20px; */
+  /* padding: 20px 0 0 0; */
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.divFin h5 {
+  font-size: 2rem;
+  color: #fff;
+}
+
+.divFin span {
+  color: #1CB0F6;
+  font-weight: bold;
+}
+
+/* Perder */
+.divBotones {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.divBotones button {
+  width: 250px;
+}
+
+.boton-menu {
+  color: #999 !important;
+  background-color: #ccc !important;
+}
+
+.boton-menu::after {
+  background-color: #F5F5F5 !important;
+}
+
+#comprobar {
+  margin-bottom: 5vh;
+}
+
+@media(max-width: 550px) {
+  h1 {
+    padding: 80px 20px 20px 20px;
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+
+  .pregunta {
+    padding: 0;
+    margin: 0 auto;
+    width: 90vw;
+  }
+
+  .opciones {
+    margin: 0 auto;
+    padding-top: 10px;
+    width: 90vw;
+  }
+
+  #comprobar {
+    width: auto;
+  }
+
+  .divFin {
+    transform: scale(0.9);
+    h2 {
+      font-size: 3rem;
+    }
+  }
+
+  .divBotones {
+    flex-flow: column;
+  }
+}

@@ -12,6 +12,17 @@ import org.springframework.data.repository.query.FluentQuery.FetchableFluentQuer
 
 import com.dawes.proyecto.modelo.EjercicioVO;
 
+<<<<<<< HEAD
+=======
+/**
+ * Interfaz para el servicio relacionado con la entidad {@link EjercicioVO}.
+ * 
+ * <p>
+ * Define métodos para realizar operaciones CRUD y consultas personalizadas en
+ * la entidad EjercicioVO.
+ * </p>
+ */
+>>>>>>> master
 public interface ServicioEjercicio {
 
 	<S extends EjercicioVO> S save(S entity);
@@ -78,4 +89,8 @@ public interface ServicioEjercicio {
 
 	Optional<List<EjercicioVO>> findByNivel(String nivel);
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> master

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/forge/0.10.0/forge.min.js"></script>
+  <script src="https://kit.fontawesome.com/3100f371c7.js" crossorigin="anonymous"></script>
+  <script type="module" src="../js/comprobarSesion.js"></script>
+  <script type="module" src="../js/admin-preguntas.js"></script> 
+  <link rel="stylesheet" href="../css/admin-preguntas.css">
+  <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+  <title>LinguoLearn | admin</title>
+</head>
+<body>
+  <main>
+    <div class="flex-container">
+      <h2>Preguntas</h2>
+      <li class="list-none p-3 ml-5">
+        <a href="/admin.html">Admin</a>
+        <span class="text-stone-500 text-lg">></span>
+        <a href="/admin-ejercicios.html">Ejercicios</a>
+        <span class="text-stone-500 text-lg">></span>
+        <p class="text-stone-500 text-lg font-semibold">Preguntas</p>
+      </li>
+    </div>
+    <table id="preguntasTabla"> 
+        <thead>
+            <tr>
+                <th>Enunciado</th>
+                <th>Editar</th>
+                <th>Borrar</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <button class="button-19 add">+</button>
+</main>
+<div class="modal-container modal-editar">
+    <div class="modal-info">
+      <div class="modal-titulo">
+        <h4>Editar pregunta</h4>
+        <i onclick="document.querySelector('.modal-editar').classList.remove('shown')" class="fa-solid fa-xmark"></i>
+      </div>
+      <form>
+        <div>
+          <label for="enunciado">Enunciado:</label>
+          <input type="text" id="enunciado" name="enunciado">
+        </div>
+        <button class="button-19" id="edit">EDITAR</button>
+      </form>
+    </div>
+  </div>
+
+
+<div class="modal-container modal-add">
+<div class="modal-info">
+  <div class="modal-titulo">
+    <h4>Añadir pregunta</h4>
+    <i onclick="document.querySelector('.modal-add').classList.remove('shown')" class="fa-solid fa-xmark"></i>
+  </div>
+  <form>
+    <div>
+      <label for="enunciado">Enunciado:</label>
+      <input type="text" id="enunciado" name="enunciado" required>
+    </div>
+    <button class="button-19" id="add">AÑADIR</button>
+  </form>
+</div>
+</div>
+
+<div class="modal-container modal-delete">
+<div class="modal-info">
+  <div class="modal-titulo">
+    <h4>Borrar pregunta</h4>
+    <i onclick="document.querySelector('.modal-delete').classList.remove('shown')" class="fa-solid fa-xmark"></i>
+  </div>
+  <p>¿Esta seguro de que desea borrar la pregunta?</p>
+  <div class="botones">
+      <button id="delete">borrar</button>
+      <button onclick="document.querySelector('.modal-delete').classList.remove('shown')">cancelar</button>
+  </div>
+</div>
+</div>
+</body>
+</html>
