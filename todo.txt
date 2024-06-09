@@ -1,6 +1,0 @@
-javadoc
-junit
-revisar documentacion
-revisar codigo
-revisar aplicacion
-revisar despliegue

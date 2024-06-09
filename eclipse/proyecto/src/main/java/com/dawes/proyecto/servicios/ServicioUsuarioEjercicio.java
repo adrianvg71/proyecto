@@ -14,13 +14,6 @@ import com.dawes.proyecto.modelo.EjercicioVO;
 import com.dawes.proyecto.modelo.UsuarioEjercicioVO;
 import com.dawes.proyecto.modelo.UsuarioVO;
 
-<<<<<<< HEAD
-=======
-/**
- * Interfaz para definir operaciones de servicio relacionadas con la entidad
- * UsuarioEjercicio.
- */
->>>>>>> master
 public interface ServicioUsuarioEjercicio {
 
 	<S extends UsuarioEjercicioVO> S save(S entity);

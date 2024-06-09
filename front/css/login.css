@@ -121,16 +121,3 @@ body {
   font-weight: bold;
 }
 
-<<<<<<< HEAD
-=======
-@media(max-width: 550px) {
-
-  img {
-    width: 90vw !important;
-  }
-
-  .formularios {
-    width: 90vw;
-  }
-}
->>>>>>> master

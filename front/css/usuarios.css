@@ -14,19 +14,10 @@ main {
 }
 
 h2 {
-<<<<<<< HEAD
     padding: 20px;
     font-size: 2.5rem;
     font-weight: bold;
     color: #333;
-=======
-    /* padding: 20px; */
-    transform: translateY(-20px);
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #333;
-    margin: 20px auto;
->>>>>>> master
     text-align: center;
 }
 
@@ -192,47 +183,4 @@ button {
 
   #delete:hover {
     opacity: .7;
-<<<<<<< HEAD
   }
-=======
-  }
-
- .flex-container {
-    display: inline-flex; 
-    align-items: flex-end; 
-    width: 100%;
-  }
-
-/* Estilos para el elemento <li> */
-li {
-  list-style: none; /* Elimina los marcadores de lista */
-  padding-bottom: 0.5rem; /* Añade relleno alrededor del contenido */
-}
-
-/* Estilos para el enlace <a> dentro del <li> */
-li a {
-  text-decoration: underline; /* Subraya el texto */
-  color: #4a4a4a; /* Color del texto */
-  font-size: 1.125rem; /* Tamaño de fuente */
-  font-weight: 600; /* Grosor de fuente */
-  transition: color 0.2s; /* Transición suave para el cambio de color */
-}
-
-/* Estilos para el enlace <a> cuando se coloca sobre él */
-li a:hover {
-  color: #666; /* Cambia el color del texto al pasar el ratón por encima */
-}
-
-/* Estilos para el segundo <span> dentro del <li> */
-li span:nth-of-type(2) {
-  color: #4a4a4a; /* Color del texto */
-  font-size: 1.125rem; /* Tamaño de fuente */
-}
-
-/* Estilos para el tercer <span> dentro del <li> */
-li span:nth-of-type(3) {
-  color: #4a4a4a; /* Color del texto */
-  font-size: 1.125rem; /* Tamaño de fuente */
-  font-weight: 600; /* Grosor de fuente */
-}
->>>>>>> master
