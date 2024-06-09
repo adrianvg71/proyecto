@@ -12,10 +12,20 @@ import org.springframework.data.repository.query.FluentQuery.FetchableFluentQuer
 
 import com.dawes.proyecto.modelo.UsuarioVO;
 
+/**
+ * Interfaz para el servicio de usuarios.
+ */
 public interface ServicioUsuario {
 
+	/**
+	 * Encuentra un usuario por su correo electrónico.
+	 *
+	 * @param correo El correo electrónico del usuario a buscar.
+	 * @return Un Optional que contiene el usuario encontrado, si existe.
+	 */
 	Optional<UsuarioVO> findByCorreo(String correo);
 
+	// Métodos CRUD básicos
 	<S extends UsuarioVO> S save(S entity);
 
 	<S extends UsuarioVO> List<S> saveAll(Iterable<S> entities);
@@ -77,5 +87,4 @@ public interface ServicioUsuario {
 	<S extends UsuarioVO> List<S> findAll(Example<S> example, Sort sort);
 
 	void deleteAll();
-
 }

@@ -1,0 +1,240 @@
+@import url(main.css);
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  margin-top: 1.2rem;
+  height: 100%;
+  margin: 0 auto;
+  width: 85%;
+}
+
+h2 {
+  margin: 20px 0 10px 0;
+  font-size: 2.5rem;
+  font-weight: bold;
+  /* margin: auto; */
+  color: #333;
+  text-align: center;
+}
+
+table {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  border-collapse: collapse;
+}
+th, td {
+  border: 1px solid #333;
+  padding: 8px;
+}
+th {
+  background-color: #1CB0F6;
+}
+
+tbody tr {
+  background-color: #00ccff36;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #00ccffc7;
+}
+
+button {
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.borrar {
+  background-color: #C70000; 
+  padding: 10px;
+  /* color: #bcc; */
+}
+
+.borrar::after {
+  background-color: red;
+}
+
+.editar {
+  padding: 10px;
+}
+
+.add {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding: 20px;
+  font-size: 1.5rem;
+  background-color: #00bf33;
+}
+
+.add::after {
+  background-color: #0FFF50;
+}
+
+a {
+  color: #007bff; /* Color del texto similar al azul predeterminado de los enlaces */
+  text-decoration: none; /* Elimina el subrayado predeterminado */
+  cursor: pointer; /* Cambia el cursor al pasar por encima */
+  transition: color 0.3s ease-in-out; /* Agrega una transición suave para el cambio de color y transform */
+  font-weight: bold; /* Hace el texto del enlace en negrita */
+}
+
+a:hover {
+  color: #0056b3; /* Color del texto al pasar el cursor por encima */
+}
+
+
+.modal-container {
+  visibility: hidden;
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 20;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  transition: opacity .3s ease-in-out, visibility .3s ease-in-out;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.modal-info {
+  transform: scale(1.2);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 30px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Sombra */
+  /* max-width: 400px; */
+}
+
+.modal-titulo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: #1CB0F6;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 0px 0 10px 0;
+  border-bottom: 2px solid #1CB0F6;
+  margin-bottom: 5px;
+}
+
+.modal-titulo i {
+  cursor: pointer;
+  transition: opacity .3s ease-in-out;
+}
+
+.modal-titulo i:hover {
+  opacity: .5;
+}
+
+label {
+  font-weight: bold;
+}
+
+select,
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  margin-top: 5px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+form {
+  margin: 0; /* Elimina el margen predeterminado */
+  padding: 0; /* Elimina el relleno predeterminado */
+}
+
+.shown {
+  visibility: visible;
+  opacity: 1;
+}
+
+.botones {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: .5rem;
+}
+
+.botones button {
+  background-color: #ddd; /* Color de fondo rojo */
+  color: #333; /* Color de texto blanco */
+  border: none; /* Sin borde */
+  padding: 12px 20px; /* Espaciado interno */
+  border-radius: 4px; /* Bordes redondeados */
+  cursor: pointer; /* Cursor apuntador */
+  transition: opacity .2s ease-in-out;
+}
+
+.botones button:hover {
+  opacity: .7;
+}
+
+#delete {
+  background-color: red;
+  color: white;
+}
+
+#delete:hover {
+  opacity: .7;
+}
+
+/* .flex-container {
+  display: inline-flex; 
+  align-items: flex-end; 
+  width: 100%;
+} */
+
+.flex-container li {
+  list-style: none; /* Elimina los marcadores de lista */
+  padding-bottom: 0.5rem; /* Añade relleno alrededor del contenido */
+}
+
+/* Estilos para el enlace <a> dentro del <li> */
+li a {
+  text-decoration: underline; /* Subraya el texto */
+  color: #4a4a4a; /* Color del texto */
+  font-size: 1.125rem; /* Tamaño de fuente */
+  font-weight: 600; /* Grosor de fuente */
+  transition: color 0.2s; /* Transición suave para el cambio de color */
+}
+
+/* Estilos para el enlace <a> cuando se coloca sobre él */
+li a:hover {
+  color: #666; /* Cambia el color del texto al pasar el ratón por encima */
+}
+
+/* Estilos para el <span> dentro del <li> */
+li span {
+  color: #4a4a4a; /* Color del texto */
+  font-size: 1.125rem; /* Tamaño de fuente */
+  margin: 0 5px; /* Añade un margen a los lados */
+}
+
+/* Estilos para el párrafo <p> dentro del <li> */
+li p {
+  display: inline-block;
+  font-weight: 400; /* Grosor de fuente */
+  color: #4a4a4a; /* Color del texto */
+  font-size: 1.125rem; /* Tamaño de fuente */
+}

@@ -15,6 +15,14 @@ import org.springframework.stereotype.Service;
 import com.dawes.proyecto.modelo.EjercicioVO;
 import com.dawes.proyecto.repositorio.EjercicioRepository;
 
+/**
+ * Implementación del servicio relacionado con la entidad {@link EjercicioVO}.
+ * 
+ * <p>
+ * Proporciona implementaciones para los métodos definidos en
+ * {@link ServicioEjercicio}.
+ * </p>
+ */
 @Service
 public class ServicioEjercicioImpl implements ServicioEjercicio {
 

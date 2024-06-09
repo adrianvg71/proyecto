@@ -13,6 +13,10 @@ import org.springframework.data.repository.query.FluentQuery.FetchableFluentQuer
 import com.dawes.proyecto.modelo.EjercicioVO;
 import com.dawes.proyecto.modelo.PreguntaVO;
 
+/**
+ * Interfaz que define los métodos de servicio relacionados con la entidad
+ * {@link PreguntaVO}.
+ */
 public interface ServicioPregunta {
 
 	<S extends PreguntaVO> S save(S entity);

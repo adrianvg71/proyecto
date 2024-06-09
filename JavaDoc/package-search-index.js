@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"com.dawes.proyecto"},{"l":"com.dawes.proyecto.modelo"},{"l":"com.dawes.proyecto.repositorio"},{"l":"com.dawes.proyecto.servicios"},{"l":"com.dawes.proyecto.ws"}];updateSearchResults();

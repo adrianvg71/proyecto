@@ -3,7 +3,8 @@
 body {
   height: 100vh;
   width: 100vw;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
   background-color: var(--azul-fondo);
 }
 
@@ -285,4 +286,43 @@ h1 {
 
 .boton-menu::after {
   background-color: #F5F5F5 !important;
+}
+
+#comprobar {
+  margin-bottom: 5vh;
+}
+
+@media(max-width: 400px) {
+  h1 {
+    padding: 80px 20px 20px 20px;
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+
+  .pregunta {
+    padding: 0;
+    margin: 0 auto;
+    width: 90vw;
+  }
+
+  .opciones {
+    margin: 0 auto;
+    padding-top: 10px;
+    width: 90vw;
+  }
+
+  #comprobar {
+    width: auto;
+  }
+
+  .divFin {
+    transform: scale(0.9);
+    h2 {
+      font-size: 3rem;
+    }
+  }
+
+  .divBotones {
+    flex-flow: column;
+  }
 }

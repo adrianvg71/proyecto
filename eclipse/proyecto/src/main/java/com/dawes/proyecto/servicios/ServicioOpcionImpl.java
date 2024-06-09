@@ -15,6 +15,14 @@ import org.springframework.stereotype.Service;
 import com.dawes.proyecto.modelo.OpcionVO;
 import com.dawes.proyecto.repositorio.OpcionRepository;
 
+/**
+ * Implementación del servicio relacionado con la entidad {@link OpcionVO}.
+ * 
+ * <p>
+ * Proporciona implementaciones para los métodos definidos en
+ * {@link ServicioOpcion}.
+ * </p>
+ */
 @Service
 public class ServicioOpcionImpl implements ServicioOpcion {
 

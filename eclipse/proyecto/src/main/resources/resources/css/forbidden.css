@@ -1,0 +1,26 @@
+@import url(main.css);
+
+.forbidden {
+  width: 100%;
+  text-align: center;
+  margin-top: 10rem;
+  font-size: 2.5rem;
+}
+
+.forbidden i {
+  color: #333;
+  font-size: 4rem;
+  /* font-weight: bold; */
+}
+
+.forbidden h3 {
+  font-weight: bold;
+  margin: 20px;
+  color: #333;
+}
+
+.forbidden button {
+  font-size: 2rem;
+  padding: 25px 45px;
+  margin-top: 20px;
+}
