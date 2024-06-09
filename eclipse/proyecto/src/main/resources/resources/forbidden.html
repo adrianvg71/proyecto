@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/3100f371c7.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/forge/0.10.0/forge.min.js"></script>
+  <script src="./js/comprobarSesion.js" type="module"></script>
+  <link rel="stylesheet" href="./css/forbidden.css">
+  <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+  <title>Permiso denegado</title>
+</head>
+<body>
+  <script type="module">
+    import { navbar } from './js/navbar.js'
+    document.body.insertAdjacentHTML('afterbegin', navbar)
+    const scriptContent = document.querySelector('nav script').textContent;
+    const scriptElement = document.createElement('script');
+    scriptElement.type = "module";
+    scriptElement.textContent = scriptContent;
+    document.body.appendChild(scriptElement);
+  </script>
+  <div class="forbidden">
+    <i class="fa-regular fa-face-frown-open"></i>
+    <h3>No tienes permiso para acceder a esta informacion</h3>
+    <button onclick="window.location.href='index.html'" class="button-19">Volver a inicio</button>
+  </div>
+</body>
+</html>

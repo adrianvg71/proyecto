@@ -1,0 +1,83 @@
+@import url(main.css);
+
+body {
+  /* overflow: hidden; */
+  height: 100vh;
+  /* background-color: var(--fondo); */
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h1 {
+  text-align: center;
+  color: var(--texto);
+  font-size: 4rem;
+  font-weight: bold;
+  margin-top: 20vh;
+  text-align: center;
+}
+
+span {
+  color: #1CB0F6;
+}
+
+.content {
+  margin-top: -20vh;
+  background-color: #33333365;
+  padding: 2rem;
+  border-radius: 20px;
+  color: #FFFF;
+  font-weight:600;
+  display: flex;
+  flex-flow: column wrap;
+  gap: 1.5rem;
+  width: 550px;
+}
+
+.content h3 {
+  font-size: 1.6rem;
+  text-align: center;
+  line-height: 2rem;
+}
+
+.botones {
+  display: flex;
+  flex-direction: row;
+  place-content: center;
+  align-items: center;
+  gap: 5rem;
+}
+
+/* .botones button {
+  padding: 15px;
+  font-size: 1.2rem;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  border: 2px solid rgb(136, 136, 136);
+  transition: all .2s ease-in-out;
+}
+
+.botones button:hover {
+  background-color: #333;
+  color: white;
+  border: 2px solid #333;
+} */
+
+#prueba {
+  background-color: rgba(0, 128, 0, 0.4);
+}
+
+#prueba::after {
+  background-color: #32CD32;
+}
+
+/* Media query para pantallas más pequeñas
+@media (max-width: 1200px) {
+  .content {
+    width: fit-content; 
+    padding: 1rem; 
+  }
+} */

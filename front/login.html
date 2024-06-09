@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/login.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/forge/0.10.0/forge.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bcryptjs/2.4.3/bcrypt.min.js"></script>
+  <script src="js/login.js" type="module"></script>
+  <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+  <title>Login</title>
+</head>
+<body>
+  <div class="container">
+    <div>
+      <img src="img/logo-titulo4.png" alt="">
+    </div>
+    <div class="formularios">
+      <div class="tabs-container">
+        <div class="tab" id="login">Iniciar Sesión</div>
+        <div class="tab not-selected" id="register">Registrarse</div>
+      </div>
+      <div class="form-container" id="login-form">
+        <h2>Iniciar Sesión</h2>
+        <form class="login">
+          <input type="email" placeholder="Correo" required>
+          <input type="password" placeholder="Contraseña" required>
+          <button type="submit">Iniciar Sesión</button>
+        </form>
+      </div>
+      
+      <div class="form-container hidden" id="register-form">
+        <h2>Registrarse</h2>
+        <form class="registro">
+          <input type="email" placeholder="Correo" required>
+          <input type="text" placeholder="Nombre de Usuario" required>
+          <input type="password" placeholder="Contraseña" required>
+          <button type="submit">Registrarse</button>
+        </form>
+      </div>
+    </div>
+    
+  </div>
+</body>
+</html>
